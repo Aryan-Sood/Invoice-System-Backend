@@ -1,1 +1,1 @@
-web: gunicorn invoice_management.wsgi
+gunicorn invoice_management.wsgi:application
