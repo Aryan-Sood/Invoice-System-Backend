@@ -12,7 +12,8 @@ class InvoiceDetail(models.Model):
     description = models.CharField(max_length=200)
     quantity = models.PositiveIntegerField()
     unit_price = models.DecimalField(max_digits=10, decimal_places=2)
+    line_total = models.DecimalField(max_digits=12, decimal_places=2, default=0.00)
 
-    @property
-    def line_total(self):
-        return (self.unit_price * self.quantity)
+    def save(self, *args, **kwargs):
+        self.line_total = self.unit_price * self.quantity
+        super().save(*args, **kwargs)
