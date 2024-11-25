@@ -96,8 +96,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',  # Database name
         'USER': 'postgres',  # Username
-        'PASSWORD': 'LCgFfQJEMpxakEDbLTqwDqqVxpxEDpNv',  # Password
-        'HOST': 'invoice-system-backend-production.up.railway.app',  # Hostname
+        'PASSWORD': 'DPxdKCEWlXUrIIHTBpYoJnJScbIMeMyr',  # Password
+        'HOST': 'postgres.railway.internal',  # Hostname
         'PORT': '5432',  # Port
     }
 }
