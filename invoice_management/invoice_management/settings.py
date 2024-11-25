@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -77,12 +80,28 @@ WSGI_APPLICATION = 'invoice_management.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': os.getenv('DB_NAME', 'your_db_name'),  # Database name
+#         'USER': os.getenv('DB_USER', 'your_db_user'),  # Username
+#         'PASSWORD': os.getenv('DB_PASSWORD', 'your_db_password'),  # Password
+#         'HOST': os.getenv('DB_HOST', 'localhost'),  # Hostname
+#         'PORT': os.getenv('DB_PORT', '5432'),  # Port
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',  # Database name
+        'USER': 'postgres',  # Username
+        'PASSWORD': 'LCgFfQJEMpxakEDbLTqwDqqVxpxEDpNv',  # Password
+        'HOST': 'invoice-system-backend-production.up.railway.app',  # Hostname
+        'PORT': '5432',  # Port
     }
 }
+
 
 
 # Password validation
