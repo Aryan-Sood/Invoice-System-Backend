@@ -94,11 +94,11 @@ WSGI_APPLICATION = 'invoice_management.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',  # Database name
-        'USER': 'postgres.jvitbikrojqzjgwygaxh',  # Username
-        'PASSWORD': 'fEzhuf-niwtop-0jidho',  # Password
-        'HOST': 'aws-0-ap-southeast-1.pooler.supabase.com',  # Hostname
-        'PORT': '6543',  # Port
+        'NAME': os.getenv('DB_NAME'),  # Database name
+        'USER': os.getenv('DB_USER'),  # Username
+        'PASSWORD': os.getenv('DB_PASSWORD'),  # Password
+        'HOST': os.getenv('DB_HOST'),  # Hostname
+        'PORT': os.getenv('DB_PORT'),  # Port
     }
 }
 
