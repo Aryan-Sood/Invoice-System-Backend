@@ -2,6 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from .serializers import InvoiceSerializer
+from .models import Invoice
 
 # def index(request):
 #     return HttpResponse('Home Page')
@@ -18,3 +19,10 @@ class InvoiceCreateView(APIView):
         print('serializer failed')
         print(serializer)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class InvoiceListView(APIView):
+    def get(self, request):
+        print("get called")
+        invoices = Invoice.objects.all()
+        serializer = InvoiceSerializer(invoices, many = True)
+        return Response(serializer.data)
