@@ -1,6 +1,6 @@
 from django.urls import path
-from . import views
+from .views import InvoiceCreateView
 
 urlpatterns = [
-    path("", views.index, name="home")
+    path("", InvoiceCreateView.as_view(), name='invoice-create')
 ]

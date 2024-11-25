@@ -19,6 +19,6 @@ from django.urls import path, include
 from invoices import views
 
 urlpatterns = [
-    path('invoices/', include("invoices.urls")),
+    path('api/invoices', include("invoices.urls")),
     path('admin/', admin.site.urls),
 ]
