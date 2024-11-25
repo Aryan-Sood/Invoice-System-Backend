@@ -94,11 +94,11 @@ WSGI_APPLICATION = 'invoice_management.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',  # Database name
-        'USER': 'postgres',  # Username
-        'PASSWORD': 'DPxdKCEWlXUrIIHTBpYoJnJScbIMeMyr',  # Password
-        'HOST': 'postgres.railway.internal',  # Hostname
-        'PORT': '5432',  # Port
+        'NAME': 'postgres',  # Database name
+        'USER': 'postgres.jvitbikrojqzjgwygaxh',  # Username
+        'PASSWORD': 'fEzhuf-niwtop-0jidho',  # Password
+        'HOST': 'aws-0-ap-southeast-1.pooler.supabase.com',  # Hostname
+        'PORT': '6543',  # Port
     }
 }
 
