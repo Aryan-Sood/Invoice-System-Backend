@@ -41,3 +41,8 @@ class InvoiceDetailView(RetrieveAPIView):
             return Response(serializer.data, status=status.HTTP_200_OK)
         except Invoice.DoesNotExist:
             return Response({"error": "Invoice not found"}, status=status.HTTP_404_NOT_FOUND)
+
+class DeleteAllInvoices(APIView):
+    def delete(self, request):
+        Invoice.objects.all().delete()
+        return Response({"message": "All invoices deleted"}, status=status.HTTP_200_OK)
