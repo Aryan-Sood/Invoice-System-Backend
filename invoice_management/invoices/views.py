@@ -46,3 +46,15 @@ class DeleteAllInvoices(APIView):
     def delete(self, request):
         Invoice.objects.all().delete()
         return Response({"message": "All invoices deleted"}, status=status.HTTP_200_OK)
+
+class DeleteInvoiceById(APIView):
+    def delete(self, request):
+        invoice_id = request.data.get('id')
+        if not invoice_id:
+            return Response({'error': 'ID is required'}, status=status.HTTP_400_BAD_REQUEST)
+        try:
+            invoice = Invoice.objects.get(id = invoice_id)
+            invoice.delete()
+            return Response({'message': 'Invoice deleted'}, status=status.HTTP_200_OK)
+        except Invoice.DoesNotExist:
+            return Response({'error': 'Invoice not found'}, status=status.HTTP_404_NOT_FOUND)
